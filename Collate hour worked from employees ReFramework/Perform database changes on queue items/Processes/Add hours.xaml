@@ -3,14 +3,15 @@
     <x:Property Name="Message" Type="InArgument(ui:QueueItem)" />
     <x:Property Name="EmployeeTable" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="EmployeeTableFilePath" Type="InArgument(x:String)" />
+    <x:Property Name="Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>636,1723</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>635,1950</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Read_Create_Emails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="48">
+    <scg:List x:TypeArguments="x:String" Capacity="25">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -39,7 +40,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -62,10 +63,11 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Take an email message, extracts the fields and creates users into database it expects the email template to stay the same.&#xA;&#xA;The EmailFields array stores all the fields in the following order:&quot;EmployeeID&quot;,&quot;First Name&quot;,&quot;Last Name&quot;,&quot;Contracted hours&quot;,&quot;Hours worked&quot;,&quot;Sickness days&quot;}" DisplayName="Read_Create_Emails" sap:VirtualizedContainerService.HintSize="604,1518" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Take an email message, extracts the fields and creates users into database it expects the email template to stay the same.&#xA;&#xA;The EmailFields array stores all the fields in the following order:&quot;EmployeeID&quot;,&quot;First Name&quot;,&quot;Last Name&quot;,&quot;Contracted hours&quot;,&quot;Hours worked&quot;,&quot;Sickness days&quot;}" DisplayName="Read_Create_Emails" sap:VirtualizedContainerService.HintSize="604,1745" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="MessageBody" />
       <Variable x:TypeArguments="s:String[]" Name="MessageBodyArray" />
@@ -127,7 +129,7 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <Sequence DisplayName="Add to Database - Sequence" sap:VirtualizedContainerService.HintSize="562,642" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence DisplayName="Add to Database - Sequence" sap:VirtualizedContainerService.HintSize="562,869" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="UserTable" />
         <Variable x:TypeArguments="x:Int32" Name="RowIndex" />
@@ -154,19 +156,31 @@
           <InArgument x:TypeArguments="x:Object">[EmailFields(6)]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="[EmployeeTableFilePath]">
+      <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,515" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="[EmployeeTableFilePath]">
         <ui:ExcelApplicationScope.Body>
           <ActivityAction x:TypeArguments="ui:WorkbookApplication">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,406" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:Int32" Name="RowIndexExcel" />
+              </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ExcelWriteRange AddHeaders="True" DataTable="[EmployeeTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="A1" />
+              <ui:ExcelWriteRange AddHeaders="True" DataTable="[EmployeeTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="[Config(&quot;Employee sheet name&quot;).ToString]" StartingCell="A1" />
+              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Int32">[RowIndexExcel]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Int32">[RowIndex + 2]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:ExcelWriteCell Cell="[&quot;M&quot; + RowIndexExcel.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="[Config(&quot;Employee sheet name&quot;).ToString]" Text="[String.Format(&quot;=H{0}*I{0}&quot;, RowIndexExcel.ToString)]" />
             </Sequence>
           </ActivityAction>
         </ui:ExcelApplicationScope.Body>
