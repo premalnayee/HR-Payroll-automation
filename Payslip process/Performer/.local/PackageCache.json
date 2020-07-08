@@ -10,10 +10,10 @@
         "C:\\Users\\premal\\.nuget\\packages\\csvhelper/2.13.5\\lib/net40-client/CsvHelper.dll",
         "C:\\Users\\premal\\.nuget\\packages\\documentformat.openxml/2.5.0\\lib/DocumentFormat.OpenXml.dll",
         "C:\\Users\\premal\\.nuget\\packages\\microsoft.visualstudio.ole.interop/7.10.6071\\lib/Microsoft.VisualStudio.OLE.Interop.dll",
-        "C:\\Users\\premal\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.dll",
         "C:\\Users\\premal\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.OOXML.dll",
         "C:\\Users\\premal\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.OpenXml4Net.dll",
         "C:\\Users\\premal\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.OpenXmlFormats.dll",
+        "C:\\Users\\premal\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.dll",
         "C:\\Users\\premal\\.nuget\\packages\\sharpziplib/1.0.0\\lib/net45/ICSharpCode.SharpZipLib.dll",
         "C:\\Users\\premal\\.nuget\\packages\\uipath.excel.activities/2.8.6\\lib/net461/UiPath.Excel.Activities.Design.dll",
         "C:\\Users\\premal\\.nuget\\packages\\uipath.excel.activities/2.8.6\\lib/net461/UiPath.Excel.Activities.dll",
@@ -53,10 +53,10 @@
       },
       "Assemblies": [
         "C:\\Users\\premal\\.nuget\\packages\\avalonedit/5.0.3\\lib/Net40/ICSharpCode.AvalonEdit.dll",
-        "C:\\Users\\premal\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.AvalonDock.dll",
         "C:\\Users\\premal\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.AvalonDock.Themes.Aero.dll",
         "C:\\Users\\premal\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.AvalonDock.Themes.Metro.dll",
         "C:\\Users\\premal\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.AvalonDock.Themes.VS2010.dll",
+        "C:\\Users\\premal\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.AvalonDock.dll",
         "C:\\Users\\premal\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.DataGrid.dll",
         "C:\\Users\\premal\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.Toolkit.dll",
         "C:\\Users\\premal\\.nuget\\packages\\humanizer.core/2.4.2\\lib/netstandard2.0/Humanizer.dll",
@@ -87,13 +87,28 @@
         "C:\\Users\\premal\\.nuget\\packages\\uipath.uiautomation.activities/20.4.2\\lib/net461/UiPath.Wizards.dll",
         "C:\\Users\\premal\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.AzureComputerVision.dll",
         "C:\\Users\\premal\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.Core.dll",
-        "C:\\Users\\premal\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.dll",
         "C:\\Users\\premal\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.GoogleCloud.dll",
         "C:\\Users\\premal\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.Microsoft.dll",
         "C:\\Users\\premal\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.MicrosoftCloud.dll",
-        "C:\\Users\\premal\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.Tesseract.dll"
+        "C:\\Users\\premal\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.Tesseract.dll",
+        "C:\\Users\\premal\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.dll"
       ],
       "Path": "C:\\Users\\premal\\.nuget\\packages\\uipath.uiautomation.activities\\20.4.2"
+    },
+    {
+      "Package": {
+        "Id": "BalaReva.Excel.Activities",
+        "Version": "2019.10.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\premal\\.nuget\\packages\\balareva.excel.activities/2019.10.1\\lib/BalaReva.Excel.Base.dll",
+        "C:\\Users\\premal\\.nuget\\packages\\balareva.excel.activities/2019.10.1\\lib/BalaReva.Excel.Design.dll",
+        "C:\\Users\\premal\\.nuget\\packages\\balareva.excel.activities/2019.10.1\\lib/BalaReva.Excel.dll",
+        "C:\\Users\\premal\\.nuget\\packages\\balareva.excel.activities/2019.10.1\\lib/BalaReva.Excel.Utilities.dll",
+        "C:\\Users\\premal\\.nuget\\packages\\microsoft.office.interop.excel/15.0.4795.1000\\lib/net20/Microsoft.Office.Interop.Excel.dll",
+        "C:\\Users\\premal\\.nuget\\packages\\microsoftofficecore/15.0.0\\lib/net35/Office.dll"
+      ],
+      "Path": "C:\\Users\\premal\\.nuget\\packages\\balareva.excel.activities\\2019.10.1"
     }
   ],
   "Conflicts": [],
@@ -102,6 +117,20 @@
       "Id": "AvalonEdit",
       "Version": "5.0.3",
       "Dependencies": []
+    },
+    "BalaReva.Excel.Activities": {
+      "Id": "BalaReva.Excel.Activities",
+      "Version": "2019.10.1",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.Office.Interop.Excel",
+          "Item2": "[15.0.4795.1000, )"
+        },
+        {
+          "Item1": "MicrosoftOfficeCore",
+          "Item2": "[15.0.0, )"
+        }
+      ]
     },
     "ClosedXML": {
       "Id": "ClosedXML",
@@ -143,6 +172,11 @@
         }
       ]
     },
+    "Microsoft.Office.Interop.Excel": {
+      "Id": "Microsoft.Office.Interop.Excel",
+      "Version": "15.0.4795.1000",
+      "Dependencies": []
+    },
     "Microsoft.Rest.ClientRuntime": {
       "Id": "Microsoft.Rest.ClientRuntime",
       "Version": "2.3.20",
@@ -156,6 +190,11 @@
     "Microsoft.VisualStudio.OLE.Interop": {
       "Id": "Microsoft.VisualStudio.OLE.Interop",
       "Version": "7.10.6071",
+      "Dependencies": []
+    },
+    "MicrosoftOfficeCore": {
+      "Id": "MicrosoftOfficeCore",
+      "Version": "15.0.0",
       "Dependencies": []
     },
     "Newtonsoft.Json": {
@@ -361,6 +400,19 @@
     },
     {
       "Package": {
+        "Id": "BalaReva.Excel.Activities",
+        "Version": "2019.10.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\premal\\.nuget\\packages\\balareva.excel.activities\\2019.10.1\\lib\\BalaReva.Excel.Base.dll",
+        "C:\\Users\\premal\\.nuget\\packages\\balareva.excel.activities\\2019.10.1\\lib\\BalaReva.Excel.Design.dll",
+        "C:\\Users\\premal\\.nuget\\packages\\balareva.excel.activities\\2019.10.1\\lib\\BalaReva.Excel.dll",
+        "C:\\Users\\premal\\.nuget\\packages\\balareva.excel.activities\\2019.10.1\\lib\\BalaReva.Excel.Utilities.dll"
+      ],
+      "Path": "C:\\Users\\premal\\.nuget\\packages\\balareva.excel.activities\\2019.10.1"
+    },
+    {
+      "Package": {
         "Id": "ClosedXML",
         "Version": "0.87.1"
       },
@@ -395,10 +447,10 @@
         "Version": "2.8.0"
       },
       "Assemblies": [
-        "C:\\Users\\premal\\.nuget\\packages\\extended.wpf.toolkit\\2.8.0\\lib\\net40\\Xceed.Wpf.AvalonDock.dll",
         "C:\\Users\\premal\\.nuget\\packages\\extended.wpf.toolkit\\2.8.0\\lib\\net40\\Xceed.Wpf.AvalonDock.Themes.Aero.dll",
         "C:\\Users\\premal\\.nuget\\packages\\extended.wpf.toolkit\\2.8.0\\lib\\net40\\Xceed.Wpf.AvalonDock.Themes.Metro.dll",
         "C:\\Users\\premal\\.nuget\\packages\\extended.wpf.toolkit\\2.8.0\\lib\\net40\\Xceed.Wpf.AvalonDock.Themes.VS2010.dll",
+        "C:\\Users\\premal\\.nuget\\packages\\extended.wpf.toolkit\\2.8.0\\lib\\net40\\Xceed.Wpf.AvalonDock.dll",
         "C:\\Users\\premal\\.nuget\\packages\\extended.wpf.toolkit\\2.8.0\\lib\\net40\\Xceed.Wpf.DataGrid.dll",
         "C:\\Users\\premal\\.nuget\\packages\\extended.wpf.toolkit\\2.8.0\\lib\\net40\\Xceed.Wpf.Toolkit.dll"
       ],
@@ -426,6 +478,16 @@
     },
     {
       "Package": {
+        "Id": "Microsoft.Office.Interop.Excel",
+        "Version": "15.0.4795.1000"
+      },
+      "Assemblies": [
+        "C:\\Users\\premal\\.nuget\\packages\\microsoft.office.interop.excel\\15.0.4795.1000\\lib\\net20\\Microsoft.Office.Interop.Excel.dll"
+      ],
+      "Path": "C:\\Users\\premal\\.nuget\\packages\\microsoft.office.interop.excel\\15.0.4795.1000"
+    },
+    {
+      "Package": {
         "Id": "Microsoft.Rest.ClientRuntime",
         "Version": "2.3.20"
       },
@@ -446,6 +508,16 @@
     },
     {
       "Package": {
+        "Id": "MicrosoftOfficeCore",
+        "Version": "15.0.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\premal\\.nuget\\packages\\microsoftofficecore\\15.0.0\\lib\\net35\\Office.dll"
+      ],
+      "Path": "C:\\Users\\premal\\.nuget\\packages\\microsoftofficecore\\15.0.0"
+    },
+    {
+      "Package": {
         "Id": "Newtonsoft.Json",
         "Version": "11.0.2"
       },
@@ -460,10 +532,10 @@
         "Version": "2.4.1"
       },
       "Assemblies": [
-        "C:\\Users\\premal\\.nuget\\packages\\npoi\\2.4.1\\lib\\net45\\NPOI.dll",
         "C:\\Users\\premal\\.nuget\\packages\\npoi\\2.4.1\\lib\\net45\\NPOI.OOXML.dll",
         "C:\\Users\\premal\\.nuget\\packages\\npoi\\2.4.1\\lib\\net45\\NPOI.OpenXml4Net.dll",
-        "C:\\Users\\premal\\.nuget\\packages\\npoi\\2.4.1\\lib\\net45\\NPOI.OpenXmlFormats.dll"
+        "C:\\Users\\premal\\.nuget\\packages\\npoi\\2.4.1\\lib\\net45\\NPOI.OpenXmlFormats.dll",
+        "C:\\Users\\premal\\.nuget\\packages\\npoi\\2.4.1\\lib\\net45\\NPOI.dll"
       ],
       "Path": "C:\\Users\\premal\\.nuget\\packages\\npoi\\2.4.1"
     },
