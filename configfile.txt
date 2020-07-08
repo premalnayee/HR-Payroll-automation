@@ -1,7 +1,0 @@
-{
-	"URL":"https://www.xe.com/currencyconverter/convert/?Amount=1&From=GBP&To=DKK",
-	"filepath":"DataBases\\International Consultants data.xlsx",
-	"filepath1":"DataBases\\Employee Pay.xlsx",
-	"filepath2":"DataBases\\payslip_template_employees1.xlsx",
-	"filepath3":"DataBases\\payslip_template_employees.xlsx"
-}
