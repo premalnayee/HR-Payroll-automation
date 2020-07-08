@@ -4,6 +4,7 @@
     <x:Property Name="EmployeeTable" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="EmployeeTableFilePath" Type="InArgument(x:String)" />
     <x:Property Name="Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="BusinessException" Type="OutArgument(ui:BusinessRuleException)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -40,7 +41,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -64,7 +65,6 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Take an email message, extracts the fields and creates users into database it expects the email template to stay the same.&#xA;&#xA;The EmailFields array stores all the fields in the following order:&quot;EmployeeID&quot;,&quot;First Name&quot;,&quot;Last Name&quot;,&quot;Contracted hours&quot;,&quot;Hours worked&quot;,&quot;Sickness days&quot;}" DisplayName="Read_Create_Emails" sap:VirtualizedContainerService.HintSize="604,1745" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -140,7 +140,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[EmployeeTable]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Employee ID" LookupValue="[EmailFields(0)]" RowIndex="[RowIndex]" />
-      <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign DisplayName="Hours worked - Assign" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Object">[EmployeeTable.Rows(RowIndex).Item("Hours worked")]</OutArgument>
         </Assign.To>
@@ -148,7 +148,7 @@
           <InArgument x:TypeArguments="x:Object">[EmailFields(5)]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign DisplayName="Sickness days - Assign" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_2">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Object">[EmployeeTable.Rows(RowIndex).Item("Sick days")]</OutArgument>
         </Assign.To>
