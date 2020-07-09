@@ -1,0 +1,19 @@
+[
+
+{
+
+"employee_consultants_template":"C:\\Users\\moadm\\OneDrive\\Documents\\QA Files\\RPA\\Group Project - Payroll\\International Consultants Template.xlsx"
+
+"employee_table_folder":"employee_consultants_template":"C:\\Users\\moadm\\OneDrive\\Documents\\QA Files\\RPA\\Group Project - Payroll\\
+
+"employee_sheet_name": "Sheet1"
+
+
+"invoices_pdf_folder":"C:\\Users\\moadm\\OneDrive\\Documents\\UiPath\\Contractor Invoice Manager\\PDF Attachments",
+
+
+
+}
+
+
+]
