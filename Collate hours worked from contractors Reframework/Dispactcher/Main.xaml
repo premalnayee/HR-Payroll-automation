@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>677,1049</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>827,1049</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -346,7 +346,7 @@
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Verify actions with User - Message Box" sap:VirtualizedContainerService.HintSize="671,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;About to start collating emails for payroll details. Please make sure to have your email account &quot; + Config(&quot;HR managers mailbox&quot;).ToString + &quot; logged in and open on Outlook&quot;]" />
+                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Verify actions with User - Message Box" sap:VirtualizedContainerService.HintSize="671,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;About to start collating emails for payroll details. Please make sure to have your email account logged in and open on Outlook&quot;]" TopMost="True" />
                               <Assign DisplayName="Assign SystemException (initialization)" sap:VirtualizedContainerService.HintSize="671,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="s:Exception">[SystemException]</OutArgument>
