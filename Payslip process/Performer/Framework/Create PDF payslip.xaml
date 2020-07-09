@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>765,4229</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>765,4333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Create_PDF_payslip_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -60,22 +60,22 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Create_PDF_payslip" sap:VirtualizedContainerService.HintSize="775,4024" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Based on the queue item, create a PDF payslip " DisplayName="Create_PDF_payslip" sap:VirtualizedContainerService.HintSize="775,4128" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel application scope" sap:VirtualizedContainerService.HintSize="733,3932" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="[in_Config(&quot;Payslip payroll template&quot;).ToString]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel application scope" sap:VirtualizedContainerService.HintSize="733,4005" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="[in_Config(&quot;Payslip payroll template&quot;).ToString]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="699,3823" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="699,3896" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="ExchangeRate" />
               <Variable x:TypeArguments="x:String" Name="CurrencyPay" />
@@ -85,11 +85,11 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelWriteCell Cell="C8" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Employee ID&quot;).ToString]" />
-            <ui:ExcelWriteCell Cell="C9" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;First Name&quot;).ToString]" />
-            <ui:ExcelWriteCell Cell="C10" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Last Name&quot;).ToString]" />
-            <ui:ExcelWriteCell Cell="C11" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Telephone&quot;).ToString.Replace(&quot;\u00a0&quot;,&quot;&quot;)]" />
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="657,257" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:ExcelWriteCell Cell="C8" DisplayName="Employee ID - Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Employee ID&quot;).ToString]" />
+            <ui:ExcelWriteCell Cell="C9" DisplayName="First Name - Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;First Name&quot;).ToString]" />
+            <ui:ExcelWriteCell Cell="C10" DisplayName="Last Name - Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Last Name&quot;).ToString]" />
+            <ui:ExcelWriteCell Cell="C11" DisplayName="Telephone - Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Telephone&quot;).ToString.Replace(&quot;\u00a0&quot;,&quot;&quot;)]" />
+            <ui:CommentOut sap2010:Annotation.AnnotationText="Currently ignored as doesn't fit on page" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="657,288" sap2010:WorkflowViewState.IdRef="CommentOut_1">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
@@ -100,11 +100,16 @@
                   <ui:ExcelWriteCell Cell="C12" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Address&quot;).ToString.Replace(&quot;\u00a0&quot;,&quot;&quot;)]" />
                 </Sequence>
               </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <ui:ExcelWriteCell Cell="G8" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Department&quot;).ToString]" />
+            <ui:ExcelWriteCell Cell="G8" DisplayName="Department - Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Department&quot;).ToString]" />
             <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="657,314" sap2010:WorkflowViewState.IdRef="TryCatch_3">
               <TryCatch.Try>
-                <ui:ExcelWriteCell Cell="G9" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Hourly Rate&quot;).ToString]" />
+                <ui:ExcelWriteCell Cell="G9" DisplayName="Hourly Rate - Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Hourly Rate&quot;).ToString]" />
               </TryCatch.Try>
               <TryCatch.Catches>
                 <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
@@ -124,7 +129,7 @@
             </TryCatch>
             <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="657,314" sap2010:WorkflowViewState.IdRef="TryCatch_2">
               <TryCatch.Try>
-                <ui:ExcelWriteCell Cell="G9" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_15" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Hourly Rate (£)&quot;).ToString]" />
+                <ui:ExcelWriteCell Cell="G9" DisplayName="Try other Hourly Rate - Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_15" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Hourly Rate (£)&quot;).ToString]" />
               </TryCatch.Try>
               <TryCatch.Catches>
                 <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
@@ -144,7 +149,7 @@
             </TryCatch>
             <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="657,314" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
-                <ui:ExcelWriteCell Cell="G10" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Hours worked&quot;).ToString]" />
+                <ui:ExcelWriteCell Cell="G10" DisplayName="Hours worked - Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Hours worked&quot;).ToString]" />
               </TryCatch.Try>
               <TryCatch.Catches>
                 <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
@@ -162,11 +167,11 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <ui:ExcelWriteCell Cell="G11" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Contracted hours&quot;).ToString]" />
-            <ui:ExcelWriteCell Cell="G12" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_10" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Sick days&quot;).ToString]" />
-            <ui:ExcelWriteCell Cell="I8" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_11" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Expenses&quot;).ToString]" />
-            <ui:ExcelWriteCell Cell="I9" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_12" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Total cost&quot;).ToString]" />
-            <Flowchart sap:VirtualizedContainerService.HintSize="657,804" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+            <ui:ExcelWriteCell Cell="G11" DisplayName="Contracted hours - Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Contracted hours&quot;).ToString]" />
+            <ui:ExcelWriteCell Cell="G12" DisplayName="Sick days - Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_10" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Sick days&quot;).ToString]" />
+            <ui:ExcelWriteCell Cell="I8" DisplayName="Expenses - Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_11" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Expenses&quot;).ToString]" />
+            <ui:ExcelWriteCell Cell="I9" DisplayName="Total Cost - Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_12" SheetName="Sheet1" Text="[employeeQueueItem.SpecificContent(&quot;Total cost&quot;).ToString]" />
+            <Flowchart sap2010:Annotation.AnnotationText="If the worker is would like to be paid in GBP, then the exchange rate is 1. If the worker is would like to be paid in DKK, then the exchange rate is DKK_ExchangeRate, the exchange rate that was webscraped." sap:VirtualizedContainerService.HintSize="657,846" sap2010:WorkflowViewState.IdRef="Flowchart_1">
               <Flowchart.Variables>
                 <Variable x:TypeArguments="x:String" Name="Currency" />
               </Flowchart.Variables>
@@ -179,6 +184,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,127.5</av:PointCollection>
                   <x:Double x:Key="Height">768.03200000000015</x:Double>
                   <x:Double x:Key="Width">623</x:Double>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Flowchart.StartNode>
@@ -333,7 +339,7 @@
             <ui:ExcelWriteCell Cell="I10" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_13" SheetName="Sheet1" Text="[ExchangeRate]" />
             <ui:ExcelWriteCell Cell="I11" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_14" SheetName="Sheet1" Text="[CurrencyPay]" />
             <ui:ExcelSaveWorkbook DisplayName="Save Workbook" sap:VirtualizedContainerService.HintSize="657,22" sap2010:WorkflowViewState.IdRef="ExcelSaveWorkbook_1" />
-            <bew:ExportWorkBook CellRange="{x:Null}" ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Delay="3" DisplayName="Export WorkBook" ExportPath="[in_Config(&quot;Payslip save location&quot;).ToString + employeeQueueItem.SpecificContent(&quot;Employee ID&quot;).ToString + &quot;_&quot; + date.Today.ToShortDateString.Replace(&quot;/&quot;,&quot;_&quot;)]" FilePath="[in_Config(&quot;Payslip payroll template&quot;).ToString]" FormatType="PDF" sap:VirtualizedContainerService.HintSize="657,69" sap2010:WorkflowViewState.IdRef="ExportWorkBook_1" SheetName="Sheet1" />
+            <bew:ExportWorkBook CellRange="{x:Null}" ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Delay="3" DisplayName="Export WorkBook To PDF" ExportPath="[in_Config(&quot;Payslip save location&quot;).ToString + employeeQueueItem.SpecificContent(&quot;Employee ID&quot;).ToString + &quot;_&quot; + date.Today.ToShortDateString.Replace(&quot;/&quot;,&quot;_&quot;)]" FilePath="[in_Config(&quot;Payslip payroll template&quot;).ToString]" FormatType="PDF" sap:VirtualizedContainerService.HintSize="657,69" sap2010:WorkflowViewState.IdRef="ExportWorkBook_1" SheetName="Sheet1" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
