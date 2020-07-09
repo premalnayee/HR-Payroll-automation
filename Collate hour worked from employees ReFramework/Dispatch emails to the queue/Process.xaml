@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>806,1235</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>806,1310</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -57,26 +57,25 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Extract the fields of an email and push to UiPath queue&#xA;&#xA;Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="816,1070" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Extract the fields of an email and push to UiPath queue&#xA;&#xA;Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="816,1105" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="774,56" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="774,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_Config(&quot;Employee payroll queue&quot;).ToString]" Reference="[in_Mailmessage.Subject.ToString]">
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="774,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add email to Queue Item" sap:VirtualizedContainerService.HintSize="774,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_Config(&quot;Employee payroll queue&quot;).ToString]" Reference="[in_Mailmessage.Subject.ToString]">
       <ui:AddQueueItem.ItemInformation>
         <InArgument x:TypeArguments="x:String" x:Key="Sender">[in_Mailmessage.From.Address.ToString]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="Subject">[in_Mailmessage.Subject.ToString]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="Body">[in_Mailmessage.Body.ToString]</InArgument>
       </ui:AddQueueItem.ItemInformation>
     </ui:AddQueueItem>
-    <Flowchart sap:VirtualizedContainerService.HintSize="774,712" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart sap2010:Annotation.AnnotationText="If email subject is &quot;add hours&quot; then move to the &quot;HR automation\add hours&quot; folder. If email subject is &quot;Update employee payroll details&quot; then move to &quot;HR automation\Update employee payroll details&quot; folder" DisplayName="Move the email  - Flowchart" sap:VirtualizedContainerService.HintSize="774,754" sap2010:WorkflowViewState.IdRef="Flowchart_1">
       <Flowchart.Variables>
         <Variable x:TypeArguments="x:String" Name="emailSubject" />
       </Flowchart.Variables>
@@ -89,20 +88,21 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Double x:Key="Height">675.5</x:Double>
           <x:Double x:Key="Width">740</x:Double>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Flowchart.StartNode>
         <x:Reference>__ReferenceID5</x:Reference>
       </Flowchart.StartNode>
-      <FlowDecision x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Checks to see if the email subject contains &quot;Add hours&quot;" Condition="[emailSubject.Contains(&quot;Add hours&quot;)]" DisplayName="Add hours Decision" sap:VirtualizedContainerService.HintSize="159,147" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+      <FlowDecision x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Checks to see if the email subject contains &quot;Add hours&quot;" Condition="[emailSubject.Contains(&quot;Add hours&quot;)]" DisplayName="Add hours Decision" sap:VirtualizedContainerService.HintSize="160,144" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <av:Point x:Key="ShapeLocation">220,218</av:Point>
-            <av:Size x:Key="ShapeSize">159,147</av:Size>
-            <av:PointCollection x:Key="FalseConnector">379,291.5 440,291.5 440,398.5</av:PointCollection>
+            <av:Size x:Key="ShapeSize">160,144</av:Size>
+            <av:PointCollection x:Key="FalseConnector">380,290 440,290 440,398.5</av:PointCollection>
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-            <av:PointCollection x:Key="TrueConnector">220,291.5 100,291.5 100,324.5</av:PointCollection>
+            <av:PointCollection x:Key="TrueConnector">220,290 100,290 100,324.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <FlowDecision.True>
@@ -110,10 +110,10 @@
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">0,324.5</av:Point>
-                <av:Size x:Key="ShapeSize">200,52</av:Size>
+                <av:Size x:Key="ShapeSize">200,51</av:Size>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MoveOutlookMessage Account="[in_Config(&quot;HR's mailbox name&quot;).ToString]" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_1" MailFolder="[in_Config(&quot;Add hours email folder&quot;).ToString]" MailMessage="[in_Mailmessage]">
+            <ui:MoveOutlookMessage Account="[in_Config(&quot;HR's mailbox name&quot;).ToString]" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_1" MailFolder="[in_Config(&quot;Add hours email folder&quot;).ToString]" MailMessage="[in_Mailmessage]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -123,15 +123,15 @@
           </FlowStep>
         </FlowDecision.True>
         <FlowDecision.False>
-          <FlowDecision x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Checks if subject contains &quot;Update employee payroll details&quot;" Condition="[emailSubject.Contains(&quot;Update employee payroll details&quot;)]" DisplayName="Update User Decision" sap:VirtualizedContainerService.HintSize="133,163" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+          <FlowDecision x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Checks if subject contains &quot;Update employee payroll details&quot;" Condition="[emailSubject.Contains(&quot;Update employee payroll details&quot;)]" DisplayName="Update User Decision" sap:VirtualizedContainerService.HintSize="133,159" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <av:Point x:Key="ShapeLocation">373.5,398.5</av:Point>
-                <av:Size x:Key="ShapeSize">133,163</av:Size>
+                <av:Size x:Key="ShapeSize">133,159</av:Size>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                <av:PointCollection x:Key="TrueConnector">373.5,480 260,480 260,524.5</av:PointCollection>
-                <av:PointCollection x:Key="FalseConnector">506.5,480 640,480 640,514</av:PointCollection>
+                <av:PointCollection x:Key="TrueConnector">373.5,478 260,478 260,524.5</av:PointCollection>
+                <av:PointCollection x:Key="FalseConnector">506.5,478 640,478 640,514</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <FlowDecision.True>
@@ -139,10 +139,10 @@
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">160,524.5</av:Point>
-                    <av:Size x:Key="ShapeSize">200,52</av:Size>
+                    <av:Size x:Key="ShapeSize">200,51</av:Size>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:MoveOutlookMessage Account="[in_Config(&quot;HR's mailbox name&quot;).ToString]" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_2" MailFolder="[in_Config(&quot;Update employee payroll details folder&quot;).ToString]" MailMessage="[in_Mailmessage]">
+                <ui:MoveOutlookMessage Account="[in_Config(&quot;HR's mailbox name&quot;).ToString]" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_2" MailFolder="[in_Config(&quot;Update employee payroll details folder&quot;).ToString]" MailMessage="[in_Mailmessage]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -156,10 +156,10 @@
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">540,514</av:Point>
-                    <av:Size x:Key="ShapeSize">200,52</av:Size>
+                    <av:Size x:Key="ShapeSize">200,51</av:Size>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Found an Email that we didn't recognise the subject of&quot;]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Found an Email that we didn't recognise the subject of&quot;]" />
               </FlowStep>
             </FlowDecision.False>
           </FlowDecision>
