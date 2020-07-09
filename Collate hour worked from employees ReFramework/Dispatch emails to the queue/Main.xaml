@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>677,1020</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>955,1020</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -67,7 +67,7 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="Dispatch emails to the queue&#xA;Read a message at a time from the HR manager's inbox with the subject &quot;add hours&quot; or &quot;update employee payroll details&quot; and add create a queue item with the subject, sender and body of each email to the specific content&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]&#xD;&#xA;&#xD;&#xA;Team project, members: Tshepiso, Mohammed, Premal" DisplayName="Collate employee hours for payroll (Dispatcher) - General Business Process" sap:VirtualizedContainerService.HintSize="687,855" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="Dispatch emails to the queue&#xA;Read a message at a time from the HR manager's inbox with the subject &quot;add hours&quot; or &quot;update employee payroll details&quot; and add create a queue item with the subject, sender and body of each email to the specific content&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]&#xA;&#xA;Team project, members: Tshepiso, Mohammed, Premal" DisplayName="Collate employee hours for payroll (Dispatcher) - General Business Process" sap:VirtualizedContainerService.HintSize="687,855" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -179,7 +179,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Add each email's subject, sender and body to the queue item specific content &#xA;&#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried. " DisplayName="Add email to queue and move email to folder - Process Transaction" sap:VirtualizedContainerService.HintSize="231,232" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Add each email's subject, sender and body to the queue item specific content &#xA;&#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried. " DisplayName="Add email to queue and move email to folder - Process Transaction" sap:VirtualizedContainerService.HintSize="484,1029" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
                 <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="438,528" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
