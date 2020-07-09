@@ -1,0 +1,11 @@
+{
+"Employee payroll queue":"Employee payroll email automation",
+"Employee table template":"C:\\Users\\premal\\Google Drive\\QAC projects\\HR automation\\automation\\HR-Payroll-automation\\Database\\Employee table template.xlsx",
+"Employee table folder":"C:\\Users\\premal\\Google Drive\\QAC projects\\HR automation\\automation\\HR-Payroll-automation\\Database\\",
+"Employee sheet name":"Sheet1",
+"Gmail IMAP Incoming server":"imap.gmail.com",
+"Gmail Port Incoming server":993,
+"Gmail SMTP Outgoing server":"smtp.gmail.com",
+"Gmail Port Outgoing server":465,
+"Gmail credential name":"Gmail login credentials",
+}
