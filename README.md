@@ -10,9 +10,9 @@ HR Payroll automation completed as part of the requirements for the final projec
 /Remind to send out Payroll request <br />
 
 ### Documentation
-Documentation/DPD Hungry robots V1.1 <br />
-Documentation/Planning <br />
-Documentation/Presentation <br />
+/Documentation/DPD Hungry robots V1.1 <br />
+/Documentation/Planning <br />
+/Documentation/Presentation <br />
 
 Full documentation detail can be found in documentation/DPD Hungry robots C1.1.docx.
 
