@@ -14,7 +14,7 @@ HR Payroll automation completed as part of the requirements for the final projec
 /Documentation/Planning <br />
 /Documentation/Presentation <br />
 
-Full documentation detail can be found in documentation/DPD Hungry robots C1.1.docx.
+Full documentation detail can be found in documentation/DPD Hungry robots V1.1.docx.
 
 Project: HR is an extensive role within a company, with responsibilities ranging from employee on boarding to payroll. With this
 project we will be looking closely at the payroll process and evaluating how it can be automated to save time and costs. The
