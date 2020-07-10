@@ -1,7 +1,20 @@
 # HR-Payroll-automation
 HR Payroll automation completed as part of the requirements for the final project for QAC. 
 
-Full documentation detail can be found in documentation/DPD Hungry robots v0.1.docx.
+## Folder breakdown
+
+### Automation
+/Collate hour worked from employees ReFramework
+/Collate hours worked from contractors Reframework
+/Payslip process
+/Remind to send out Payroll request
+
+### Documentation
+Documentation/DPD Hungry robots V1.1
+Documentation/Planning
+Documentation/Presentation
+
+Full documentation detail can be found in documentation/DPD Hungry robots C1.1.docx.
 
 Project: HR is an extensive role within a company, with responsibilities ranging from employee on boarding to payroll. With this
 project we will be looking closely at the payroll process and evaluating how it can be automated to save time and costs. The
