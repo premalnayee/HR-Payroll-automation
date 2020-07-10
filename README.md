@@ -4,15 +4,15 @@ HR Payroll automation completed as part of the requirements for the final projec
 ## Folder breakdown
 
 ### Automation
-/Collate hour worked from employees ReFramework
-/Collate hours worked from contractors Reframework
-/Payslip process
-/Remind to send out Payroll request
+/Collate hour worked from employees ReFramework \n
+/Collate hours worked from contractors Reframework \n
+/Payslip process \n
+/Remind to send out Payroll request \n
 
 ### Documentation
-Documentation/DPD Hungry robots V1.1
-Documentation/Planning
-Documentation/Presentation
+Documentation/DPD Hungry robots V1.1 \n
+Documentation/Planning \n
+Documentation/Presentation \n
 
 Full documentation detail can be found in documentation/DPD Hungry robots C1.1.docx.
 
